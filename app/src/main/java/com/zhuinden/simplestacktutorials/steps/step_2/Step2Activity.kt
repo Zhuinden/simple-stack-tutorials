@@ -10,17 +10,14 @@ import com.zhuinden.simplestack.StateChange
 import com.zhuinden.simplestack.StateChanger
 import com.zhuinden.simplestack.navigator.Navigator
 import com.zhuinden.simplestacktutorials.R
-import com.zhuinden.simplestacktutorials.utils.hide
-import com.zhuinden.simplestacktutorials.utils.onClick
-import com.zhuinden.simplestacktutorials.utils.safe
-import com.zhuinden.simplestacktutorials.utils.show
+import com.zhuinden.simplestacktutorials.utils.*
 import kotlinx.android.parcel.Parcelize
 import kotlinx.android.synthetic.main.activity_step2.*
 
 private val Context.backstack: Backstack
     get() = Navigator.getBackstack(this)
 
-class Step2Activity : AppCompatActivity(), StateChanger {
+class Step2Activity : AppCompatActivity(), SimpleStateChanger.NavigationHandler {
     sealed class Screens : Parcelable {
         @Parcelize
         object First : Screens()
@@ -34,7 +31,7 @@ class Step2Activity : AppCompatActivity(), StateChanger {
         setContentView(R.layout.activity_step2)
 
         Navigator.configure()
-            .setStateChanger(this)
+            .setStateChanger(SimpleStateChanger(this))
             .install(this, step2Root, History.of(Screens.First)) // auto-install backstack
     }
 
@@ -44,12 +41,7 @@ class Step2Activity : AppCompatActivity(), StateChanger {
         }
     }
 
-    override fun handleStateChange(stateChange: StateChange, completionCallback: StateChanger.Callback) {
-        if (stateChange.isTopNewKeyEqualToPrevious) {
-            completionCallback.stateChangeComplete()
-            return
-        }
-
+    override fun handleNavigationEvent(stateChange: StateChange) {
         val newKey = stateChange.topNewKey<Screens>()
 
         when (newKey) {
@@ -67,7 +59,5 @@ class Step2Activity : AppCompatActivity(), StateChanger {
                 step2Button.hide()
             }
         }.safe()
-
-        completionCallback.stateChangeComplete()
     }
 }
