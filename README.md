@@ -1,0 +1,48 @@
+# Tutorials for Simple-Stack
+
+This repository contains tutorials for the [`simple-stack` navigation library]([Simple-Stack](https://github.com/Zhuinden/simple-stack)) for Android.
+
+## 1.) Using `Backstack` directly
+
+In this step, we create a `Backstack` in our Activity to track our navigation state.
+
+Then, we forward the necessary callbacks to make it work, even if there's a meteor storm or equivalent in Android's ecosystem.
+
+We see that we can pass in any Parcelable and can navigate between them seamlessly, and handle a change between them in the `handleStateChange` callback.
+
+## 2.) Using `Navigator` to hide the lifecycle callbacks
+
+In this step, we replace `Backstack` with `Navigator`, to see how much we can simplify the installation of a Backstack - down to just `onCreate` and `onBackPressed`.
+
+## 3.) Setting the title text based on our navigation history
+
+In this step, we can see how easy it is to set up any arbitrary state based on our current navigation history.
+
+The example shows how to show the "back" button when there is an available screen to go back to, and how to change the title text accordingly.
+
+## 4.) Using custom views instead of handling navigation state directly in the Activity
+
+In this step, we can see how to use custom views (compound viewgroups) to create self-contained components that can contain their own views and manage their own behavior.
+
+## 5.) Using fragments instead of custom views because that's also possible
+
+In this step, we replace custom views (compound viewgroups) with Fragments, because they're more commonly found in the wild.
+
+We can see that the Fragment framework (thanks to `attach`/`detach`/`add`/`remove`) is customizable enough that we can keep our Fragments exactly in the state as we expect them to be in based on our current navigation history.
+
+
+## License
+
+    Copyright 2020 Gabor Varadi
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
