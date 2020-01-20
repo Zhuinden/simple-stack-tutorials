@@ -30,6 +30,9 @@ In this step, we replace custom views (compound viewgroups) with Fragments, beca
 
 We can see that the Fragment framework (thanks to `attach`/`detach`/`add`/`remove`) is customizable enough that we can keep our Fragments exactly in the state as we expect them to be in based on our current navigation history.
 
+## 6.) Using `setHistory()` to implement "conditional navigation"
+
+In this step, we can see how to implement a simple splash screen using `backstack.setHistory()`.
 
 ## License
 

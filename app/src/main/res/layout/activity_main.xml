@@ -53,6 +53,13 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="16dp"
                 android:text="Step 5 - Using Fragments" />
+
+            <Button
+                android:id="@+id/buttonStep6"
+                android:layout_width="280dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:text="Step 6 - Conditional Navigation" />
         </LinearLayout>
     </ScrollView>
 </FrameLayout>

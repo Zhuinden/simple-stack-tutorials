@@ -24,6 +24,7 @@
             android:theme="@style/AppThemeNoTitle" />
         <activity android:name=".steps.step_4.Step4Activity" />
         <activity android:name=".steps.step_5.Step5Activity" />
+        <activity android:name=".steps.step_6.Step6Activity" />
     </application>
 
 </manifest>
