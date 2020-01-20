@@ -7,9 +7,10 @@ import com.zhuinden.simplestack.StateChange
 import com.zhuinden.simplestack.StateChanger
 import com.zhuinden.simplestack.navigator.Navigator
 import com.zhuinden.simplestacktutorials.R
+import com.zhuinden.simplestacktutorials.utils.SimpleStateChanger
 import kotlinx.android.synthetic.main.activity_step5.*
 
-class Step5Activity : AppCompatActivity(), StateChanger {
+class Step5Activity : AppCompatActivity(), SimpleStateChanger.NavigationHandler {
     private lateinit var fragmentStateChanger: FragmentStateChanger
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -19,7 +20,7 @@ class Step5Activity : AppCompatActivity(), StateChanger {
         fragmentStateChanger = FragmentStateChanger(supportFragmentManager, R.id.step5Root)
 
         Navigator.configure()
-            .setStateChanger(this)
+            .setStateChanger(SimpleStateChanger(this))
             .install(this, step5Root, History.of(Step5FirstScreen()))
     }
 
@@ -29,13 +30,7 @@ class Step5Activity : AppCompatActivity(), StateChanger {
         }
     }
 
-    override fun handleStateChange(stateChange: StateChange, completionCallback: StateChanger.Callback) {
-        if (stateChange.isTopNewKeyEqualToPrevious) {
-            completionCallback.stateChangeComplete()
-            return
-        }
-
+    override fun handleNavigationEvent(stateChange: StateChange) {
         fragmentStateChanger.handleStateChange(stateChange)
-        completionCallback.stateChangeComplete()
     }
 }

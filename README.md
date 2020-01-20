@@ -2,7 +2,7 @@
 
 This repository contains tutorials for the [`simple-stack` navigation library]([Simple-Stack](https://github.com/Zhuinden/simple-stack)) for Android.
 
-## [1.) Using `Backstack` directly](https://github.com/Zhuinden/simple-stack-tutorials/tree/3f134e2f782c5a768e09f9f0cbf33789497fd0ce/app/src/main/java/com/zhuinden/simplestacktutorials/steps/step_1)
+## [1.) Using `Backstack` directly](https://github.com/Zhuinden/simple-stack-tutorials/tree/534a2c63a6827bbfd3179ac2d2dd75d863dd843e/app/src/main/java/com/zhuinden/simplestacktutorials/steps/step_1)
 
 In this step, we create a `Backstack` in our Activity to track our navigation state.
 
@@ -10,21 +10,23 @@ Then, we forward the necessary callbacks to make it work, even if there's a mete
 
 We see that we can pass in any Parcelable and can navigate between them seamlessly, and handle a change between them in the `handleStateChange` callback.
 
-## [2.) Using `Navigator` to hide the lifecycle callbacks](https://github.com/Zhuinden/simple-stack-tutorials/tree/3f134e2f782c5a768e09f9f0cbf33789497fd0ce/app/src/main/java/com/zhuinden/simplestacktutorials/steps/step_2)
+Please note that this is the rawest form of simple-stack and will be greatly improved in step 2.
+
+## [2.) Using `Navigator` to hide the lifecycle callbacks](https://github.com/Zhuinden/simple-stack-tutorials/tree/534a2c63a6827bbfd3179ac2d2dd75d863dd843e/app/src/main/java/com/zhuinden/simplestacktutorials/steps/step_2)
 
 In this step, we replace `Backstack` with `Navigator`, to see how much we can simplify the installation of a Backstack - down to just `onCreate` and `onBackPressed`.
 
-## [3.) Setting the title text based on our navigation history](https://github.com/Zhuinden/simple-stack-tutorials/tree/3f134e2f782c5a768e09f9f0cbf33789497fd0ce/app/src/main/java/com/zhuinden/simplestacktutorials/steps/step_3)
+## [3.) Setting the title text based on our navigation history](https://github.com/Zhuinden/simple-stack-tutorials/tree/534a2c63a6827bbfd3179ac2d2dd75d863dd843e/app/src/main/java/com/zhuinden/simplestacktutorials/steps/step_3)
 
 In this step, we can see how easy it is to set up any arbitrary state based on our current navigation history.
 
 The example shows how to show the "back" button when there is an available screen to go back to, and how to change the title text accordingly.
 
-## [4.) Using custom views instead of handling navigation state directly in the Activity](https://github.com/Zhuinden/simple-stack-tutorials/tree/3f134e2f782c5a768e09f9f0cbf33789497fd0ce/app/src/main/java/com/zhuinden/simplestacktutorials/steps/step_4)
+## [4.) Using custom views instead of handling navigation state directly in the Activity](https://github.com/Zhuinden/simple-stack-tutorials/tree/534a2c63a6827bbfd3179ac2d2dd75d863dd843e/app/src/main/java/com/zhuinden/simplestacktutorials/steps/step_4)
 
 In this step, we can see how to use custom views (compound viewgroups) to create self-contained components that can contain their own views and manage their own behavior.
 
-## [5.) Using fragments instead of custom views because that's also possible](https://github.com/Zhuinden/simple-stack-tutorials/tree/3f134e2f782c5a768e09f9f0cbf33789497fd0ce/app/src/main/java/com/zhuinden/simplestacktutorials/steps/step_5)
+## [5.) Using fragments instead of custom views because that's also possible](https://github.com/Zhuinden/simple-stack-tutorials/tree/534a2c63a6827bbfd3179ac2d2dd75d863dd843e/app/src/main/java/com/zhuinden/simplestacktutorials/steps/step_5)
 
 In this step, we replace custom views (compound viewgroups) with Fragments, because they're more commonly found in the wild.
 

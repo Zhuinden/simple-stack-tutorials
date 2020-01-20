@@ -31,12 +31,12 @@ class Step1Activity : AppCompatActivity(), StateChanger {
         setContentView(R.layout.activity_step1)
 
         @Suppress("DEPRECATION") // don't worry, Navigator will handle it in step 2
-        backstack = lastCustomNonConfigurationInstance?.let { it as Backstack } ?: Backstack()
+        backstack = lastCustomNonConfigurationInstance?.let { it as Backstack } ?: Backstack().apply {
+            backstack.setup(History.of(Screens.First))
 
-        backstack.setup(History.of(Screens.First))
-
-        savedInstanceState?.let { bundle ->
-            backstack.fromBundle(bundle.getParcelable("BACKSTACK_STATE"))
+            savedInstanceState?.let { bundle ->
+                backstack.fromBundle(bundle.getParcelable("BACKSTACK_STATE"))
+            }
         }
 
         backstack.setStateChanger(this) // handle navigation in this class
