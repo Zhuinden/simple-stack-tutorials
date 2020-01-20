@@ -32,7 +32,7 @@ In this step, we replace custom views (compound viewgroups) with Fragments, beca
 
 We can see that the Fragment framework (thanks to `attach`/`detach`/`add`/`remove`) is customizable enough that we can keep our Fragments exactly in the state as we expect them to be in based on our current navigation history.
 
-## 6.) Using `setHistory()` to implement "conditional navigation"
+## [6.) Using `setHistory()` to implement "conditional navigation"](https://github.com/Zhuinden/simple-stack-tutorials/tree/bace8b7b00abcf1c66af0a9a5e91665c8746cdf5/app/src/main/java/com/zhuinden/simplestacktutorials/steps/step_6)
 
 In this step, we can see how to implement a simple splash screen using `backstack.setHistory()`.
 
