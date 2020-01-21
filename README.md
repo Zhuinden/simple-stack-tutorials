@@ -36,6 +36,14 @@ We can see that the Fragment framework (thanks to `attach`/`detach`/`add`/`remov
 
 In this step, we can see how to implement a simple splash screen using `backstack.setHistory()`.
 
+## 7.) Implementing "First Time User Experience" with simple-stack
+
+In this step, we can see an example of implementing a "first time user experience" flow, following the behavior outlined in the guide ["Jetpack Navigation: Conditional Navigation - First Time User Experience"](https://developer.android.com/guide/navigation/navigation-conditional#first-time_user_experience).
+
+We also utilize the power of global services bound to the global scope, and a shared ViewModel bound to both shared identifier across screens (`registration`), and ViewModels bound to the scope of a given screen (`ScopeKey` / `HasServices`).
+
+With this, we implement a FTUE where the user's navigation state and inputs are properly preserved across both configuration changes AND [process death](https://youtu.be/sLCn27DceRA?t=1231) (as it should be in **any** sample and app code written for Android).
+
 ## License
 
     Copyright 2020 Gabor Varadi
