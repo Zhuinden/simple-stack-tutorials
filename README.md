@@ -36,7 +36,7 @@ We can see that the Fragment framework (thanks to `attach`/`detach`/`add`/`remov
 
 In this step, we can see how to implement a simple splash screen using `backstack.setHistory()`.
 
-## [7.) Implementing "First Time User Experience" with simple-stack](https://github.com/Zhuinden/simple-stack-tutorials/tree/475c51e5a2e26df6d7798ad934481a815bf26870/app/src/main/java/com/zhuinden/simplestacktutorials/steps/step_7)
+## [7.) Implementing "First Time User Experience" with simple-stack](https://github.com/Zhuinden/simple-stack-tutorials/tree/1a4fb5175039f7e7ef3051491f109aa017360990/app/src/main/java/com/zhuinden/simplestacktutorials/steps/step_7)
 
 In this step, we can see an example of implementing a "first time user experience" flow, following the behavior outlined in the guide ["Jetpack Navigation: Conditional Navigation - First Time User Experience"](https://developer.android.com/guide/navigation/navigation-conditional#first-time_user_experience).
 
