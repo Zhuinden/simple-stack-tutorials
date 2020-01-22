@@ -17,10 +17,8 @@ class ProfileViewModel(
     private val handler = Handler(Looper.getMainLooper())
 
     override fun onServiceActive() {
-        handler.post /* bypass #215, will be fixed in simple-stack version > 2.2.2 */ {
-            if (!AuthenticationManager.isAuthenticated(appContext)) {
-                backstack.setHistory(History.of(LoginKey()), StateChange.REPLACE)
-            }
+        if (!AuthenticationManager.isAuthenticated(appContext)) {
+            backstack.setHistory(History.of(LoginKey()), StateChange.REPLACE)
         }
     }
 

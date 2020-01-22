@@ -6,11 +6,14 @@ import android.os.Parcelable
 import androidx.appcompat.app.AppCompatActivity
 import com.zhuinden.simplestack.Backstack
 import com.zhuinden.simplestack.History
+import com.zhuinden.simplestack.SimpleStateChanger
 import com.zhuinden.simplestack.StateChange
-import com.zhuinden.simplestack.StateChanger
 import com.zhuinden.simplestack.navigator.Navigator
 import com.zhuinden.simplestacktutorials.R
-import com.zhuinden.simplestacktutorials.utils.*
+import com.zhuinden.simplestacktutorials.utils.hide
+import com.zhuinden.simplestacktutorials.utils.onClick
+import com.zhuinden.simplestacktutorials.utils.safe
+import com.zhuinden.simplestacktutorials.utils.show
 import kotlinx.android.parcel.Parcelize
 import kotlinx.android.synthetic.main.activity_step2.*
 
@@ -41,7 +44,7 @@ class Step2Activity : AppCompatActivity(), SimpleStateChanger.NavigationHandler 
         }
     }
 
-    override fun handleNavigationEvent(stateChange: StateChange) {
+    override fun onNavigationEvent(stateChange: StateChange) {
         val newKey = stateChange.topNewKey<Screens>()
 
         when (newKey) {

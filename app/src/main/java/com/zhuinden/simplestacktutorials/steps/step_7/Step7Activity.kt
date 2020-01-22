@@ -5,13 +5,13 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.zhuinden.simplestack.GlobalServices
 import com.zhuinden.simplestack.History
+import com.zhuinden.simplestack.SimpleStateChanger
 import com.zhuinden.simplestack.StateChange
 import com.zhuinden.simplestack.navigator.Navigator
 import com.zhuinden.simplestacktutorials.R
 import com.zhuinden.simplestacktutorials.steps.step_7.core.navigation.FragmentStateChanger
 import com.zhuinden.simplestacktutorials.steps.step_7.features.login.LoginKey
 import com.zhuinden.simplestacktutorials.steps.step_7.features.profile.ProfileKey
-import com.zhuinden.simplestacktutorials.utils.SimpleStateChanger
 import kotlinx.android.synthetic.main.activity_step7.*
 
 class Step7Activity : AppCompatActivity(), SimpleStateChanger.NavigationHandler {
@@ -49,7 +49,7 @@ class Step7Activity : AppCompatActivity(), SimpleStateChanger.NavigationHandler 
         }
     }
 
-    override fun handleNavigationEvent(stateChange: StateChange) {
+    override fun onNavigationEvent(stateChange: StateChange) {
         fragmentStateChanger.handleStateChange(stateChange)
     }
 

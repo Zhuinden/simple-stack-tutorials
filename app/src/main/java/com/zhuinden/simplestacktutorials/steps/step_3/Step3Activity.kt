@@ -5,11 +5,14 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.zhuinden.simplestack.Backstack
 import com.zhuinden.simplestack.History
+import com.zhuinden.simplestack.SimpleStateChanger
 import com.zhuinden.simplestack.StateChange
-import com.zhuinden.simplestack.StateChanger
 import com.zhuinden.simplestack.navigator.Navigator
 import com.zhuinden.simplestacktutorials.R
-import com.zhuinden.simplestacktutorials.utils.*
+import com.zhuinden.simplestacktutorials.utils.hide
+import com.zhuinden.simplestacktutorials.utils.onClick
+import com.zhuinden.simplestacktutorials.utils.show
+import com.zhuinden.simplestacktutorials.utils.showIf
 import kotlinx.android.synthetic.main.activity_step3.*
 
 private val Activity.backstack: Backstack
@@ -35,7 +38,7 @@ class Step3Activity : AppCompatActivity(), SimpleStateChanger.NavigationHandler 
         }
     }
 
-    override fun handleNavigationEvent(stateChange: StateChange) {
+    override fun onNavigationEvent(stateChange: StateChange) {
         val newKeys = stateChange.getNewKeys<Step3Screen>()
         step3TitleButtonBack.showIf { newKeys.size > 1 } // show up if can go back
 

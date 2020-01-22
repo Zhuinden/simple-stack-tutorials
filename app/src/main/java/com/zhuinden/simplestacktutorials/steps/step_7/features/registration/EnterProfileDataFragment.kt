@@ -23,6 +23,7 @@ class EnterProfileDataFragment : BaseFragment() {
 
         textFullName.setText(viewModel.fullName)
         textBio.setText(viewModel.bio)
+
         textFullName.onTextChanged { fullName -> viewModel.onFullNameChanged(fullName) }
         textBio.onTextChanged { bio -> viewModel.onBioChanged(bio) }
         buttonEnterProfileNext.onClick { viewModel.onEnterProfileNextClicked() }
