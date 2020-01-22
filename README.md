@@ -2,7 +2,7 @@
 
 This repository contains tutorials for the [`simple-stack` navigation library]([Simple-Stack](https://github.com/Zhuinden/simple-stack)) for Android.
 
-## [1.) Using `Backstack` directly](https://github.com/Zhuinden/simple-stack-tutorials/tree/534a2c63a6827bbfd3179ac2d2dd75d863dd843e/app/src/main/java/com/zhuinden/simplestacktutorials/steps/step_1)
+## [1.) Using `Backstack` directly](https://github.com/Zhuinden/simple-stack-tutorials/tree/9247a14d13f9f1cf8d9f226844a6c3fe3b6ef87a/app/src/main/java/com/zhuinden/simplestacktutorials/steps/step_1)
 
 In this step, we create a `Backstack` in our Activity to track our navigation state.
 
