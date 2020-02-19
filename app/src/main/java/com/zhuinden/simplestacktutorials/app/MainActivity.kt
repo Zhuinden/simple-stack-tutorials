@@ -10,6 +10,7 @@ import com.zhuinden.simplestacktutorials.steps.step_4.Step4Activity
 import com.zhuinden.simplestacktutorials.steps.step_5.Step5Activity
 import com.zhuinden.simplestacktutorials.steps.step_6.Step6Activity
 import com.zhuinden.simplestacktutorials.steps.step_7.Step7Activity
+import com.zhuinden.simplestacktutorials.steps.step_8.Step8Activity
 import com.zhuinden.simplestacktutorials.utils.onClick
 import com.zhuinden.simplestacktutorials.utils.startActivity
 import kotlinx.android.synthetic.main.activity_main.*
@@ -45,6 +46,10 @@ class MainActivity : AppCompatActivity() {
 
         buttonStep7.onClick {
             startActivity<Step7Activity>()
+        }
+
+        buttonStep8.onClick {
+            startActivity<Step8Activity>()
         }
     }
 }
