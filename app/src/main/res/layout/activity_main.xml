@@ -74,6 +74,13 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="16dp"
                 android:text="Step 8 - Result Passing Between Scoped Services" />
+
+            <Button
+                android:id="@+id/buttonStep9"
+                android:layout_width="280dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:text="Step 9 - FTUE with Rx" />
         </LinearLayout>
     </ScrollView>
 </FrameLayout>

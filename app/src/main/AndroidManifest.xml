@@ -27,6 +27,7 @@
         <activity android:name=".steps.step_6.Step6Activity" />
         <activity android:name=".steps.step_7.Step7Activity" />
         <activity android:name=".steps.step_8.Step8Activity" />
+        <activity android:name=".steps.step_9.Step9Activity" />
     </application>
 
 </manifest>

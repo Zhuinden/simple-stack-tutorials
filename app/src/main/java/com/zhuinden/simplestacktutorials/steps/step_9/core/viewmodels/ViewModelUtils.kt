@@ -1,9 +1,9 @@
-package com.zhuinden.simplestacktutorials.steps.step_7.core.viewmodels
+package com.zhuinden.simplestacktutorials.steps.step_9.core.viewmodels
 
 import androidx.fragment.app.Fragment
 import com.zhuinden.simplestack.Backstack
 import com.zhuinden.simplestack.ServiceBinder
-import com.zhuinden.simplestacktutorials.steps.step_7.core.navigation.backstack
+import com.zhuinden.simplestacktutorials.steps.step_9.core.navigation.backstack
 
 inline fun <reified T> Backstack.lookup(serviceTag: String = T::class.java.name) = lookupService<T>(serviceTag)
 
@@ -20,3 +20,4 @@ inline fun <reified NAME> ServiceBinder.bindAs(service: Any, serviceTag: String 
 inline fun <reified T> ServiceBinder.lookup(serviceTag: String = T::class.java.name) = lookupService<T>(serviceTag)
 
 inline fun <reified T> ServiceBinder.get(serviceTag: String = T::class.java.name) = getService<T>(serviceTag)
+

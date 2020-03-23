@@ -52,6 +52,10 @@ By using `serviceBinder.lookupService()`, we can retrieve a service in the paren
 
 This way, we can handle result passing between screens as a regular callback method. 
 
+## 9.) Adding RxJava to "First Time User Experience"
+
+In this step, we'll add RxJava's BehaviorRelays and ViewModel-internal subscriptions to provide field validation.
+
 ## License
 
     Copyright 2020 Gabor Varadi
