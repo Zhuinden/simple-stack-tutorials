@@ -33,7 +33,7 @@ dependencies {
 
     implementation 'com.github.Zhuinden:simple-stack:2.3.0'
     implementation 'com.github.Zhuinden:event-emitter:1.1.0'
-    implementation 'com.github.Zhuinden:rx-combinetuple-kt:1.0.0'
+    implementation 'com.github.Zhuinden:rx-combinetuple-kt:1.1.0'
 
     implementation 'io.reactivex.rxjava2:rxkotlin:2.4.0'
     implementation 'com.jakewharton.rxrelay2:rxrelay:2.1.1'
