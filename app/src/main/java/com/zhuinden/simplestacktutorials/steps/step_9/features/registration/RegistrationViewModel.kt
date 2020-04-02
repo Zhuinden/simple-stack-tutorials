@@ -6,6 +6,7 @@ import com.zhuinden.rxcombinetuplekt.combineTuple
 import com.zhuinden.simplestack.*
 import com.zhuinden.simplestacktutorials.steps.step_9.AuthenticationManager
 import com.zhuinden.simplestacktutorials.steps.step_9.features.profile.ProfileKey
+import com.zhuinden.simplestacktutorials.steps.step_9.utils.get
 import com.zhuinden.statebundle.StateBundle
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.rxkotlin.addTo
@@ -51,7 +52,7 @@ class RegistrationViewModel(
     }
 
     fun onRegisterAndLoginClicked() {
-        if (isRegisterAndLoginEnabled.value!!) {
+        if (isRegisterAndLoginEnabled.get()) {
             currentState = RegistrationState.REGISTRATION_COMPLETED
             AuthenticationManager.saveRegistration(appContext)
             backstack.setHistory(History.of(ProfileKey()), StateChange.FORWARD)
@@ -59,7 +60,7 @@ class RegistrationViewModel(
     }
 
     fun onEnterProfileNextClicked() {
-        if (isEnterProfileNextEnabled.value!!) {
+        if (isEnterProfileNextEnabled.get()) {
             currentState = RegistrationState.COLLECT_USER_PASSWORD
             backstack.goTo(CreateLoginCredentialsKey())
         }
@@ -75,10 +76,10 @@ class RegistrationViewModel(
 
     override fun toBundle(): StateBundle = StateBundle().apply {
         putSerializable("currentState", currentState)
-        putString("username", username.value!!)
-        putString("password", password.value!!)
-        putString("fullName", fullName.value!!)
-        putString("bio", bio.value!!)
+        putString("username", username.get())
+        putString("password", password.get())
+        putString("fullName", fullName.get())
+        putString("bio", bio.get())
     }
 
     override fun fromBundle(bundle: StateBundle?) {

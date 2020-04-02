@@ -5,6 +5,7 @@ import android.view.View
 import com.zhuinden.simplestacktutorials.R
 import com.zhuinden.simplestacktutorials.steps.step_9.core.navigation.BaseFragment
 import com.zhuinden.simplestacktutorials.steps.step_9.core.viewmodels.lookup
+import com.zhuinden.simplestacktutorials.steps.step_9.utils.get
 import com.zhuinden.simplestacktutorials.utils.onClick
 import com.zhuinden.simplestacktutorials.utils.onTextChanged
 import io.reactivex.disposables.CompositeDisposable
@@ -20,8 +21,8 @@ class LoginFragment : BaseFragment(R.layout.step9_login_fragment) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        textUsername.setText(viewModel.username.value!!)
-        textPassword.setText(viewModel.password.value!!)
+        textUsername.setText(viewModel.username.get())
+        textPassword.setText(viewModel.password.get())
 
         viewModel.isLoginEnabled.distinctUntilChanged().subscribeBy { enabled ->
             buttonLogin.isEnabled = enabled

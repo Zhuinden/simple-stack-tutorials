@@ -7,6 +7,7 @@ import com.zhuinden.simplestack.*
 import com.zhuinden.simplestacktutorials.steps.step_9.AuthenticationManager
 import com.zhuinden.simplestacktutorials.steps.step_9.features.profile.ProfileKey
 import com.zhuinden.simplestacktutorials.steps.step_9.features.registration.EnterProfileDataKey
+import com.zhuinden.simplestacktutorials.steps.step_9.utils.get
 import com.zhuinden.statebundle.StateBundle
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.rxkotlin.addTo
@@ -35,7 +36,7 @@ class LoginViewModel(
     }
 
     fun onLoginClicked() {
-        if (isLoginEnabled.value!!) {
+        if (isLoginEnabled.get()) {
             AuthenticationManager.saveRegistration(appContext)
             backstack.setHistory(History.of(ProfileKey()), StateChange.FORWARD)
         }
@@ -46,8 +47,8 @@ class LoginViewModel(
     }
 
     override fun toBundle(): StateBundle = StateBundle().apply {
-        putString("username", username.value!!)
-        putString("password", password.value!!)
+        putString("username", username.get())
+        putString("password", password.get())
     }
 
     override fun fromBundle(bundle: StateBundle?) {

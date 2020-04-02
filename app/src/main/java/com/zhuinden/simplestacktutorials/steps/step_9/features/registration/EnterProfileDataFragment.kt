@@ -5,6 +5,7 @@ import android.view.View
 import com.zhuinden.simplestacktutorials.R
 import com.zhuinden.simplestacktutorials.steps.step_9.core.navigation.BaseFragment
 import com.zhuinden.simplestacktutorials.steps.step_9.core.viewmodels.lookup
+import com.zhuinden.simplestacktutorials.steps.step_9.utils.get
 import com.zhuinden.simplestacktutorials.utils.onClick
 import com.zhuinden.simplestacktutorials.utils.onTextChanged
 import io.reactivex.disposables.CompositeDisposable
@@ -20,8 +21,8 @@ class EnterProfileDataFragment : BaseFragment(R.layout.step9_enter_profile_data_
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        textFullName.setText(viewModel.fullName.value!!)
-        textBio.setText(viewModel.bio.value!!)
+        textFullName.setText(viewModel.fullName.get())
+        textBio.setText(viewModel.bio.get())
 
         viewModel.isEnterProfileNextEnabled.distinctUntilChanged().subscribeBy { enabled ->
             buttonEnterProfileNext.isEnabled = enabled
