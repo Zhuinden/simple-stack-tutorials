@@ -6,6 +6,7 @@ import com.zhuinden.simplestacktutorials.R
 import com.zhuinden.simplestacktutorials.steps.step_9.core.navigation.BaseFragment
 import com.zhuinden.simplestacktutorials.steps.step_9.core.viewmodels.lookup
 import com.zhuinden.simplestacktutorials.steps.step_9.utils.get
+import com.zhuinden.simplestacktutorials.steps.step_9.utils.set
 import com.zhuinden.simplestacktutorials.utils.onClick
 import com.zhuinden.simplestacktutorials.utils.onTextChanged
 import io.reactivex.disposables.CompositeDisposable
@@ -28,8 +29,8 @@ class EnterProfileDataFragment : BaseFragment(R.layout.step9_enter_profile_data_
             buttonEnterProfileNext.isEnabled = enabled
         }.addTo(compositeDisposable)
 
-        textFullName.onTextChanged { fullName -> viewModel.fullName.accept(fullName) }
-        textBio.onTextChanged { bio -> viewModel.bio.accept(bio) }
+        textFullName.onTextChanged { fullName -> viewModel.fullName.set(fullName) }
+        textBio.onTextChanged { bio -> viewModel.bio.set(bio) }
         buttonEnterProfileNext.onClick { viewModel.onEnterProfileNextClicked() }
     }
 

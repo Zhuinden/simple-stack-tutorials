@@ -8,6 +8,7 @@ import com.zhuinden.simplestacktutorials.steps.step_9.AuthenticationManager
 import com.zhuinden.simplestacktutorials.steps.step_9.features.profile.ProfileKey
 import com.zhuinden.simplestacktutorials.steps.step_9.features.registration.EnterProfileDataKey
 import com.zhuinden.simplestacktutorials.steps.step_9.utils.get
+import com.zhuinden.simplestacktutorials.steps.step_9.utils.set
 import com.zhuinden.statebundle.StateBundle
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.rxkotlin.addTo
@@ -27,7 +28,7 @@ class LoginViewModel(
     override fun onServiceRegistered() {
         combineTuple(username, password)
             .subscribeBy { (username, password) ->
-                isLoginEnabled.accept(username.isNotBlank() && password.isNotBlank())
+                isLoginEnabled.set(username.isNotBlank() && password.isNotBlank())
             }.addTo(compositeDisposable)
     }
 
@@ -53,8 +54,8 @@ class LoginViewModel(
 
     override fun fromBundle(bundle: StateBundle?) {
         bundle?.run {
-            username.accept(getString("username", ""))
-            password.accept(getString("password", ""))
+            username.set(getString("username", ""))
+            password.set(getString("password", ""))
         }
     }
 }

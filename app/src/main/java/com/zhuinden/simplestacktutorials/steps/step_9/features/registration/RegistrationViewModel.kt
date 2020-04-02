@@ -7,6 +7,7 @@ import com.zhuinden.simplestack.*
 import com.zhuinden.simplestacktutorials.steps.step_9.AuthenticationManager
 import com.zhuinden.simplestacktutorials.steps.step_9.features.profile.ProfileKey
 import com.zhuinden.simplestacktutorials.steps.step_9.utils.get
+import com.zhuinden.simplestacktutorials.steps.step_9.utils.set
 import com.zhuinden.statebundle.StateBundle
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.rxkotlin.addTo
@@ -38,12 +39,12 @@ class RegistrationViewModel(
     override fun onServiceRegistered() {
         combineTuple(fullName, bio)
             .subscribeBy { (fullName, bio) ->
-                isEnterProfileNextEnabled.accept(fullName.isNotBlank() && bio.isNotBlank())
+                isEnterProfileNextEnabled.set(fullName.isNotBlank() && bio.isNotBlank())
             }.addTo(compositeDisposable)
 
         combineTuple(username, password)
             .subscribeBy { (username, password) ->
-                isRegisterAndLoginEnabled.accept(username.isNotBlank() && password.isNotBlank())
+                isRegisterAndLoginEnabled.set(username.isNotBlank() && password.isNotBlank())
             }.addTo(compositeDisposable)
     }
 
@@ -85,10 +86,10 @@ class RegistrationViewModel(
     override fun fromBundle(bundle: StateBundle?) {
         bundle?.run {
             currentState = getSerializable("currentState") as RegistrationState
-            username.accept(getString("username", ""))
-            password.accept(getString("password", ""))
-            fullName.accept(getString("fullName", ""))
-            bio.accept(getString("bio", ""))
+            username.set(getString("username", ""))
+            password.set(getString("password", ""))
+            fullName.set(getString("fullName", ""))
+            bio.set(getString("bio", ""))
         }
     }
 }
